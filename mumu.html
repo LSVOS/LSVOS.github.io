@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MUMU Challenge 2026</title>
+  <meta content="Mobile Unified Multimodal Understanding Challenge 2026" name="description">
+  <meta content="MUMU, challenge, multimodal understanding, mobile AI, CVPR 2026" name="keywords">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .mumu-page {
+      color: #263238;
+      background: #fbfcfa;
+    }
+
+    .mumu-page a {
+      color: #0f8a7a;
+    }
+
+    .mumu-page a:hover {
+      color: #d97706;
+    }
+
+    .mumu-page #header {
+      background: rgba(19, 78, 74, 0.88);
+    }
+
+    .mumu-page #header.header-transparent {
+      background: transparent;
+    }
+
+    .mumu-page #header.header-scrolled {
+      background: rgba(19, 78, 74, 0.94);
+    }
+
+    .mumu-page .navbar a,
+    .mumu-page .navbar a:focus {
+      color: #fff;
+    }
+
+    .mumu-page .navbar a:hover,
+    .mumu-page .navbar .active,
+    .mumu-page .navbar .active:focus,
+    .mumu-page .navbar li:hover>a {
+      background: rgba(245, 158, 11, 0.22);
+    }
+
+    .mumu-page .section-bg {
+      background-color: #edf7f4;
+    }
+
+    .mumu-page .section-title h2 {
+      color: #134e4a;
+    }
+
+    .mumu-page .section-title h2::after {
+      background: none;
+      width: 76px;
+      height: 4px;
+      top: auto;
+      bottom: -10px;
+      border-radius: 999px;
+      background-color: #f59e0b;
+    }
+
+    .mumu-page .table thead th {
+      color: #134e4a;
+      border-bottom-color: #99f6e4;
+    }
+
+    .mumu-page .table tbody th {
+      color: #0f766e;
+    }
+
+    .mumu-page pre {
+      border-left: 5px solid #14b8a6;
+      box-shadow: inset 0 0 0 1px rgba(20, 184, 166, 0.12);
+    }
+
+    .mumu-page .team .member .member-info {
+      color: #134e4a;
+      border-top: 4px solid #14b8a6;
+      box-shadow: 0px 8px 24px rgba(19, 78, 74, 0.14);
+    }
+
+    .mumu-page .team .member h4 {
+      color: #134e4a;
+    }
+
+    .mumu-page .team .member h4::after {
+      background: #f59e0b;
+    }
+
+    .mumu-page #organizer .organizer-member .pic img {
+      display: block;
+      width: 190px;
+      height: 190px;
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .mumu-page #organizer .organizer-member {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mumu-page .back-to-top {
+      background: #0f766e;
+    }
+
+    .mumu-page .back-to-top:hover {
+      background: #f59e0b;
+    }
+
+    .mumu-page #footer {
+      background: #0f2f2c;
+    }
+
+    .mumu-page #footer .copyright {
+      border-top-color: #1f5f58;
+    }
+  </style>
+</head>
+
+<body class="mumu-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container d-flex align-items-center justify-content-between position-relative">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index_mumu.html"><span>MUMU</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#overview">Overview</a></li>
+          <li><a class="nav-link scrollto" href="#tasks">Tasks</a></li>
+          <li><a class="nav-link scrollto" href="#datasets">Datasets</a></li>
+          <li><a class="nav-link scrollto" href="#baseline">Baseline</a></li>
+          <li><a class="nav-link scrollto" href="#rules">Rules & Metrics</a></li>
+          <li><a class="nav-link scrollto" href="#submission">Submission</a></li>
+          <li><a class="nav-link scrollto" href="#dates">Dates</a></li>
+          <li><a class="nav-link scrollto" href="#awards">Awards</a></li>
+          <li><a class="nav-link scrollto" href="#organizer">Organizers</a></li>
+          <li><a class="nav-link scrollto" href="#sponsor">Sponsor</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" style="background-image: linear-gradient(rgba(55, 142, 181, 0.55), rgba(55, 142, 181, 0.25)), url('images/workshop2025/background_mumu_ai_denver.png'); background-size: cover; background-position: center bottom;">
+    <div class="hero-container" data-aos="fade-up">
+      <h1 style="font-size: 54px; margin: 125px 0 35px 0">MUMU Challenge 2026</h1>
+      <h2 style="font-size: 32px; margin: 0 0 12px 0">Mobile Unified Multimodal Understanding Challenge</h2>
+      <h2 style="font-size: 28px;">Efficient Unified Multimodal Architectures for Mobile-Oriented Visual Understanding</h2>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Overview Section ======= -->
+    <section id="overview" class="services">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 0px; padding: 0px 0;">
+          <h2>Challenge Overview</h2>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <p style="text-align: justify; hyphens: auto; font-size: 1.2em">
+                The Mobile Unified Multimodal Understanding (MUMU) Challenge 2026 is a benchmark competition designed to advance research on efficient unified multimodal architectures for mobile-oriented visual understanding.
+              </p>
+              <br>
+              <p style="text-align: justify; hyphens: auto; font-size: 1.2em">
+                Unlike existing task-specific benchmarks, this challenge requires participants to design a single unified model that simultaneously performs semantic tagging, open-vocabulary object detection, and image caption generation under constrained computational budgets.
+              </p>
+              <br>
+              <p style="text-align: justify; hyphens: auto; font-size: 1.2em">
+                The challenge emphasizes algorithmic efficiency, architectural unification, and deployability on resource-constrained environments, while evaluation is conducted on PC-side compute statistics rather than requiring on-device execution.
+              </p>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Overview Section -->
+
+    <!-- ======= Objectives Section ======= -->
+    <section id="objectives" class="services" style="padding: 0px 20px 40px 20px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Objectives</h2>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <ul style="text-align: left; font-size: 1.2em">
+                <li>Promote unified vision-language modeling</li>
+                <li>Encourage efficient multi-task representation learning</li>
+                <li>Benchmark trade-offs between performance and complexity</li>
+                <li>Advance mobile-friendly multimodal perception systems</li>
+              </ul>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Objectives Section -->
+
+    <!-- ======= Tasks Section ======= -->
+    <section id="tasks" class="services" style="padding: 50px 20px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Competition Tasks</h2>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+
+              <div>
+                <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold;">Task A: Multi-Concept Image Tagging</p>
+                <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                  Participants must predict semantic concept labels from image quality attributes, scene categories, and event categories.
+                </p>
+                <ul style="text-align: left; font-size: 1.2em">
+                  <li>Image quality attributes: blur, noise, exposure, compression artifacts</li>
+                  <li>Scene categories: indoor/outdoor, office, kitchen, street, stadium, etc.</li>
+                  <li>Event categories: concert, wedding, sports event, protest, festival, etc.</li>
+                </ul>
+              </div>
+
+              <div>
+                <div style="margin-top: 25px; margin-bottom: 10px;"></div>
+                <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold;">Task B: Open-Vocabulary Object Detection</p>
+                <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                  Participants must detect objects from a provided open vocabulary. Models must generalize to unseen categories.
+                </p>
+                <ul style="text-align: left; font-size: 1.2em">
+                  <li>Bounding box coordinates</li>
+                  <li>Confidence score</li>
+                  <li>Text label</li>
+                </ul>
+              </div>
+
+              <div>
+                <div style="margin-top: 25px; margin-bottom: 10px;"></div>
+                <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold;">Task C: Efficient Image Captioning</p>
+                <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                  Participants must generate concise natural language descriptions for each input image.
+                </p>
+                <ul style="text-align: left; font-size: 1.2em">
+                  <li>English only</li>
+                  <li>Single-sentence output</li>
+                </ul>
+              </div>
+
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Tasks Section -->
+
+    <!-- ======= Datasets Section ======= -->
+    <section id="datasets" class="services" style="padding: 0px 20px 50px 20px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Official Datasets</h2>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="text-align: left; font-size: 1.5em">Task</th>
+                      <th style="text-align: left; font-size: 1.5em">Dataset</th>
+                      <th style="text-align: left; font-size: 1.5em">Purpose</th>
+                      <th style="text-align: left; font-size: 1.5em">Usage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" style="text-align: left; font-size: 1.15em">Quality</th>
+                      <td style="text-align: left; font-size: 1.15em">KonIQ-10k / SPAQ / LIVE Challenge</td>
+                      <td style="text-align: left; font-size: 1.15em">Image quality attributes</td>
+                      <td style="text-align: left; font-size: 1.15em">Train</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align: left; font-size: 1.15em">Scene</th>
+                      <td style="text-align: left; font-size: 1.15em">Places365</td>
+                      <td style="text-align: left; font-size: 1.15em">Scene recognition</td>
+                      <td style="text-align: left; font-size: 1.15em">Train</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align: left; font-size: 1.15em">Event</th>
+                      <td style="text-align: left; font-size: 1.15em">EventNet / NUS-WIDE</td>
+                      <td style="text-align: left; font-size: 1.15em">Event semantics</td>
+                      <td style="text-align: left; font-size: 1.15em">Train</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align: left; font-size: 1.15em">Detection</th>
+                      <td style="text-align: left; font-size: 1.15em">Objects365 / LVIS / Visual Genome</td>
+                      <td style="text-align: left; font-size: 1.15em">Detection + open-vocab</td>
+                      <td style="text-align: left; font-size: 1.15em">Train</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align: left; font-size: 1.15em">Captioning</th>
+                      <td style="text-align: left; font-size: 1.15em">COCO Captions / Flickr30k / Conceptual Captions</td>
+                      <td style="text-align: left; font-size: 1.15em">Caption generation</td>
+                      <td style="text-align: left; font-size: 1.15em">Train</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                Data splits include a training set of approximately 1.2M images, a 20,000-image validation set, a 20,000-image public test set, and a 30,000-image private final test set. Novel detection categories are hidden in private evaluation.
+              </p>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Datasets Section -->
+
+    <!-- ======= Baseline Section ======= -->
+    <section id="baseline" class="services" style="padding: 0px 20px 50px 20px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Official Baseline</h2>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <ul style="text-align: left; font-size: 1.2em">
+                <li>Official Baseline Code: Microsoft <a href="https://github.com/microsoft/dstoolkit-finetuning-florence-2" target="_blank" rel="noopener noreferrer">dstoolkit-finetuning-florence-2</a></li>
+                <li>Official Pre-trained Model: Microsoft <a href="https://huggingface.co/microsoft/Florence-2-base" target="_blank" rel="noopener noreferrer">Florence-2-base</a></li>
+              </ul>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Baseline Section -->
+
+    <!-- ======= Rules Section ======= -->
+    <section id="rules" class="services" style="padding: 0px 20px 50px 20px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Rules & Evaluation</h2>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold;">Model Constraints</p>
+              <ul style="text-align: left; font-size: 1.2em">
+                <li>Single unified model only; Adapter / LoRA is allowed within the unified architecture.</li>
+                <li>No task-specific independent models. All task heads must be integrated within the unified model.</li>
+                <li>Total Parameter Count &le; 0.5B.</li>
+                <li>Peak Inference Memory &le; 8GB (PC-side)</li>
+              </ul>
+
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold; margin-top: 25px;">Evaluation Metrics</p>
+              <ul style="text-align: left; font-size: 1.2em">
+                <li>Task A: Macro-F1</li>
+                <li>Task B: Novel-aware mAP@[0.5:0.95]</li>
+                <li>Task C: 0.4 CIDEr + 0.3 SPICE + 0.3 CLIPScore</li>
+                <li>Final Score = (0.3A + 0.4B + 0.3C) &times; E</li>
+                <li>Efficiency factor: E = 1 / (1 + alpha * PeakMemory + beta * Params)</li>
+              </ul>
+
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold; margin-top: 25px;">Ranking Rules</p>
+              <ul style="text-align: left; font-size: 1.2em">
+                <li>Primary ranking: Final Score</li>
+                <li>Tie-break 1: Lower peak inference memory</li>
+                <li>Tie-break 2: Lower parameter count</li>
+                <li>Tie-break 3: Higher detection performance</li>
+              </ul>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Rules Section -->
+
+    <!-- ======= Submission Section ======= -->
+    <section id="submission" class="services" style="padding: 0px 20px 50px 20px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Submission Format</h2>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                Submissions are evaluated on Codabench. Upload a <b>single ZIP archive</b> containing both the predictions used for automatic scoring and the reproducible model package used for manual verification. All files must sit at the ZIP root exactly as shown below &mdash; do not wrap them in an outer directory.
+              </p>
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                The scoring program reads only <code>predictions.json</code>. It checks that the reproducibility files exist, but it never imports or executes participant code.
+              </p>
+              <pre style="text-align: left; background: #f7f7f7; padding: 20px; border-radius: 4px; font-size: 1.05em; overflow-x: auto;"><code>submission.zip
+predictions.json         # scored automatically
+model/
+  weights.pt             # .pth, .bin, .safetensors or sharded weights
+  config.yaml
+inference.py
+requirements.txt
+README.md</code></pre>
+
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold; margin-top: 25px;">Before your first upload</p>
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                Email your <b>team name</b>, <b>Codabench username</b> and <b>affiliation</b> to <a href="mailto:changliu73@outlook.com">changliu73@outlook.com</a>. Registrations are approved manually, and these three fields must match the values you enter in the Codabench fact sheet when you upload. No submission file repeats them.
+              </p>
+
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold; margin-top: 25px;">predictions.json</p>
+              <pre style="text-align: left; background: #f7f7f7; padding: 20px; border-radius: 4px; font-size: 1.05em; overflow-x: auto;"><code>{
+  "schema_version": "1.0",
+  "model_info": {
+    "parameters_m": 120.0,
+    "gflops_224": 18.5,
+    "peak_memory_gb": 4.2
+  },
+  "predictions": [
+    {
+      "image_id": "image_filename_without_extension",
+      "tags": {
+        "quality": ["quality_good"],
+        "scene": ["indoor", "office"],
+        "event": ["conference"]
+      },
+      "detections": [
+        { "label": "person", "score": 0.9321, "bbox_xyxy": [15.8, 47.1, 211.6, 426.9] }
+      ],
+      "caption": "A person speaks into a microphone during an indoor conference."
+    }
+  ]
+}</code></pre>
+              <ul style="text-align: left; font-size: 1.2em">
+                <li><code>image_id</code> is the image filename stem. Every test image must appear <b>exactly once</b>; missing or unknown IDs are rejected.</li>
+                <li><code>tags</code> must contain all three namespaces &mdash; <code>quality</code>, <code>scene</code>, <code>event</code> &mdash; each a list drawn from the published Task&nbsp;A vocabulary. Empty lists are allowed; unknown labels and duplicates are rejected.</li>
+                <li><code>detections</code>: <code>label</code> is free-form lowercase text, <code>score</code> is finite and in <code>[0, 1]</code>, and <code>bbox_xyxy</code> gives absolute pixel coordinates <code>[x1, y1, x2, y2]</code> in the original image. At most <b>300</b> detections per image.</li>
+                <li><code>caption</code> must be non-empty, a single line, English, at most <b>300 characters</b> and at most <b>30 evaluator tokens</b>.</li>
+              </ul>
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                Evaluator tokens are counted after NFKC normalisation and lowercasing: Unicode word characters, with internal apostrophes and hyphens kept inside a single token, and standalone punctuation dropped. Accented and non-Latin letters count as ordinary letters, so <code>Jo&atilde;o</code> is one token.
+              </p>
+
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold; margin-top: 25px;">model_info</p>
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                The <code>model_info</code> block at the top of <code>predictions.json</code> declares your model's resource usage. These three numbers are the only model metadata a submission carries &mdash; nothing else has to be filled in by hand.
+              </p>
+              <ul style="text-align: left; font-size: 1.2em">
+                <li><code>parameters_m</code> &mdash; total parameter count in millions. Enters the efficiency factor <i>E</i>.</li>
+                <li><code>gflops_224</code> &mdash; GFLOPs for one 224&times;224 forward pass. Enters the efficiency factor <i>E</i>.</li>
+                <li><code>peak_memory_gb</code> &mdash; peak inference memory. A hard eligibility limit; it does not enter the score.</li>
+              </ul>
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                Declared values above the published model constraints are rejected automatically; accepted values remain subject to organizer verification.
+              </p>
+
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold; margin-top: 25px;">Reproducibility package</p>
+              <p style="text-align: left; hyphens: auto; font-size: 1.2em">
+                A unified predictor API is required. <code>inference.py</code> should initialize from a weight path and return tags, detections and a caption for each input image in a single inference call. Top Teams are reproduced and inspected manually: a submission is disqualified if the predictions cannot be reproduced from the included checkpoint within the announced tolerance, if the implementation uses independent task-specific models, or if any resource constraint is exceeded.
+              </p>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Submission Section -->
+
+    <!-- ======= Dates Section ======= -->
+    <section id="dates" class="services" style="padding: 0px 20px; margin-bottom: 50px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Important Dates</h2>
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+              <div class="tab-pane fade show active" id="challenge" role="tabpanel" aria-labelledby="challenge-tab">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th style="text-align: left; font-size: 2.0em">Event</th>
+                        <th style="text-align: left; font-size: 2.0em">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" style="text-align: left; font-size: 1.3em">Validation Data Opens</th>
+                        <td style="text-align: left; font-size: 1.3em">8th August, 2026</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" style="text-align: left; font-size: 1.3em">Final Submission Deadline</th>
+                        <td style="text-align: left; font-size: 1.3em">1st September, 2026 (Extended)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" style="text-align: left; font-size: 1.3em">Winner Announcement</th>
+                        <td style="text-align: left; font-size: 1.3em">3rd September, 2026</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Dates Section -->
+
+    <!-- ======= Awards Section ======= -->
+    <section id="awards" class="services" style="padding: 0px 20px 50px 20px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100" style="margin-bottom: 10px; padding: 0px 0;">
+          <h2>Awards &amp; Prizes</h2>
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold;">Prize Distribution</p>
+              <ul style="text-align: left; font-size: 1.2em">
+                <li>1st Place Overall: 6,000 CNY</li>
+                <li>2nd Place Overall: 3,000 CNY</li>
+                <li>3rd Place Overall: 1,000 CNY</li>
+              </ul>
+              <p style="text-align: left; hyphens: auto; font-size: 1.4em; font-weight: bold; margin-top: 25px;">Additional Awards</p>
+              <ul style="text-align: left; font-size: 1.2em">
+                <li>Best Efficiency Award</li>
+                <li>Best Unified Architecture Award</li>
+                <li>Best Student Team Award</li>
+              </ul>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Awards Section -->
+
+    <!-- ======= Organizers Section ======= -->
+    <section id="organizer" class="team" style="padding: 0px 0 50px 0;">
+      <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <h2>Organizers</h2>
+      </div>
+
+      <div class="container-fluid" style="width: 80%;">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-5 text-center">
+            <div class="member organizer-member" data-aos="fade-up" data-aos-delay="100">
+              <div class="pic">
+                <img src="images/workshop2025/organizers/HenghuiDing.jpg" class="img-fluid" alt="Henghui Ding">
+              </div>
+              <div class="member-info">
+                <h4><a href="https://henghuiding.github.io" target="_blank" rel="noopener noreferrer">Henghui Ding</a></h4>
+                <span>Fudan University</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5 text-center">
+            <div class="member organizer-member" data-aos="fade-up" data-aos-delay="150">
+              <div class="pic">
+                <img src="images/workshop2025/organizers/ChangLiu.jpg" class="img-fluid" alt="Chang Liu">
+              </div>
+              <div class="member-info">
+                <h4><a href="https://changliu19.github.io/" target="_blank" rel="noopener noreferrer">Chang Liu</a></h4>
+                <span>SUFE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5 text-center">
+            <div class="member organizer-member" data-aos="fade-up" data-aos-delay="200">
+              <div class="pic">
+                <img src="images/workshop2026/organizers/YangTong.jpg" class="img-fluid" alt="Tong Yang">
+              </div>
+              <div class="member-info">
+                <h4>Tong Yang</h4>
+                <span>Transsion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Organizers Section -->
+
+    <!-- ======= Sponsor Section ======= -->
+    <section id="sponsor" class="team" style="padding: 0px 0 50px 0;">
+      <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <h2>Sponsor</h2>
+      </div>
+
+      <div class="container-fluid" style="width: 80%;">
+        <div class="row justify-content-center">
+          <div class="col-auto mb-5 text-center">
+            <div class="member" data-aos="fade-up" data-aos-delay="100" style="width: 320px; max-width: 100%; margin-left: auto; margin-right: auto;">
+              <a href="https://www.transsion.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                <img src="images/workshop2026/Transsion_Logo.png" class="img-fluid" alt="Transsion" style="display: block; width: 100%; max-width: 200px; margin: 0 auto 50px auto;">
+              </a>
+              <h3><a href="https://www.transsion.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; display: inline-block; white-space: nowrap;">Transsion</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Sponsor Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p style="text-align: center; hyphens: auto; font-size: 1.5em">
+                Feel free to contact us: <br>
+                <a href="mailto:henghui.ding@gmail.com">henghui.ding@gmail.com</a><br>
+                <a href="mailto:changliu73@outlook.com">changliu73@outlook.com</a>
+              </p>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>MUMU</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
